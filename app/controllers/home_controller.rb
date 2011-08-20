@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @pic = FiveHundredPx.search(Sms.last.body).first
+    @pic = Sms.last.photos.first
   end
 end
