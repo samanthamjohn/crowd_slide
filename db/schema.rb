@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110820223014) do
+ActiveRecord::Schema.define(:version => 20110820232050) do
 
   create_table "sms", :force => true do |t|
     t.string   "phone_number"
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photos"
+    t.string   "photos",       :limit => 5000
   end
 
 end
