@@ -1,0 +1,9 @@
+# .pairs - configuration for 'git pair'
+# place in project or home directory
+pairs:
+  sj: Samantha John
+  bm: Ben Moss
+email:
+  prefix: pair
+  domain: example.com
+
