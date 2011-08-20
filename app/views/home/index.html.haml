@@ -1,1 +1,2 @@
-= image_tag(@pic["image_url"].gsub("2.jpg", "4.jpg"))
+%h2= @pic["name"]
+= image_tag(@pic["image_url"].gsub("2.jpg", "4.jpg"), :class => 'pix')

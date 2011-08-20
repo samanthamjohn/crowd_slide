@@ -1,0 +1,31 @@
+html {
+  background-color: #222;
+}
+body {
+  background-color: #222;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  color: #ccc;
+  float: left;
+}
+
+h2 {
+  float: right;
+  color: #ccc;
+  font-size: 40px;
+}
+
+h3 {
+  color: #ccc;
+}
+
+img.pix {
+  display: block;
+  position: relative;
+  margin: auto;
+  height: 600px;
+}
