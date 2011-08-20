@@ -5,8 +5,7 @@ class FiveHundredPx
 
   def self.search(query)
     options = { :query => { :consumer_key => ENV['FH_PX_KEY'], :term => query }}
-    result = self.get("/photos/search", options)
-    result["photos"].sort { |p1,p2| p2["created_at"] <=> p1["created_at"] }
+    self.get("/photos/search", options)["photos"]
   end
 
 end
