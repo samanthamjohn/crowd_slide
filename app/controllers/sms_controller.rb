@@ -6,6 +6,8 @@ class SmsController < ApplicationController
 
   def create
     sms = Sms.new(body: params["Body"], phone_number: params["From"])
-    sms.save!
+    if sms.save
+      head 200
+    end
   end
 end
