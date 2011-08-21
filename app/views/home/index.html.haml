@@ -1,5 +1,2 @@
-%h2#caption
-#photos
-  - @photos.each do |photo|
-    .photo
-      = image_tag(photo[:image_url], title: photo[:name])
+.photos
+  = render :partial => "photos", :locals => { :photos => @photos }

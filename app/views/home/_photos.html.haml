@@ -1,0 +1,30 @@
+%h2#caption
+#photos
+  - photos.each do |photo|
+    .photo
+      = image_tag(photo[:image_url], title: photo[:name])
+:javascript
+  $(function() {
+    var slider = $("#photos").bxSlider({
+      mode: "fade",
+      speed: 1000,
+      infiniteLoop: false,
+      controls: false,
+      captions: true,
+      captionsSelector: $("#caption"),
+      auto: true,
+      onLastSlide: function() {
+        slider.destroyShow();
+        $.get("/latest", function(response) {
+          window.setTimeout(function() {
+            $(".photos").html(response)
+          }, 2000);
+        })
+      }
+    });
+
+    slider.stopShow();
+    $(".photos").fadeIn(500);
+    slider.startShow();
+
+  });
