@@ -25,7 +25,9 @@ h2 {
 h3 {
   color: #ccc;
   font-weight: normal;
-  font-size: 26px;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 h3 strong {

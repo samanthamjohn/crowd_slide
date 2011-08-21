@@ -7,8 +7,11 @@ class FiveHundredPx
     options = { :query => { :consumer_key => ENV['FH_PX_KEY'], :term => query }}
     photos = self.get("/photos/search", options)["photos"]
     unless photos.nil?
-      photos[0...10].map do |photo| 
-        { image_url: photo["image_url"].gsub("2.jpg", "4.jpg"), name: photo["name"] }
+      photos[0...10].map do |photo|
+        { image_url: photo["image_url"].gsub("2.jpg", "4.jpg"),
+          name: photo["name"],
+          photographer: photo["user"]["fullname"]
+        }
       end
     end
   end
