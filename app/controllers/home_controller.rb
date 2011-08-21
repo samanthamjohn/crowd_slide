@@ -14,12 +14,6 @@ class HomeController < ApplicationController
   def get_photos
     sms = Sms.undisplayed.last
     if sms
-      Thread.new {
-        TWILIO_ACCOUNT.sms.messages.create({
-          :from => '+12159874639',
-          :to => sms.phone_number,
-          :body => "Your keyword '#{sms.body}' is about to appear, look up! "
-      })}
       sms.update_attribute(:displayed, true)
     else
       sms = Sms.first(:order => "random()")
