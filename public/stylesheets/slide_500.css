@@ -24,8 +24,13 @@ h2 {
 
 h3 {
   color: #ccc;
+  font-weight: normal;
+  font-size: 26px;
 }
 
+h3 strong {
+  font-weight: bold;
+}
 .photo {
   width: 960px;
   text-align: center;
