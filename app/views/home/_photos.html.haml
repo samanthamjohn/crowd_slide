@@ -2,7 +2,7 @@
 #photos
   - photos.each do |photo|
     .photo
-      = image_tag(photo[:image_url], title: photo[:name])
+      = image_tag(photo[:image_url], title: truncate(photo[:name], :length => 30))
 :javascript
   $(function() {
     var slider = $("#photos").bxSlider({
