@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'heroku'
 gem 'httparty'
+gem 'twilio-ruby'
 # Use unicorn as the web server
 # gem 'unicorn'
 
