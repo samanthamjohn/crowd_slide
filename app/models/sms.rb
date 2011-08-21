@@ -1,7 +1,7 @@
 class Sms < ActiveRecord::Base
   serialize :photos, Array
 
-  before_validation_on_create :get_500px_photos
+  before_validation :get_500px_photos, on: :create
 
   validates_presence_of :photos
 
