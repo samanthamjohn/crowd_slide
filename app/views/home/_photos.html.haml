@@ -1,13 +1,19 @@
-%h3
-  Text your keywords to
-  %strong 215 987 4639
-  to get on the screen.
-#photos
-  - photos.each do |photo|
-    .photo
-      = image_tag(photo[:image_url], title: raw("<em>#{truncate(photo[:name], :length => 30)}</em><br />#{photo[:photographer]}" ))
-%h1 Keyword: "#{keyword}"
-%h2#caption
+#header
+  %h3
+    Text your keywords to
+    %strong 215 987 4639
+    to get on the screen.
+
+#content
+  #photos
+    - photos.each do |photo|
+      .photo
+        = image_tag(photo[:image_url], title: raw("<em>#{truncate(photo[:name], :length => 25)}</em><br />#{photo[:photographer]}" ))
+
+#footer
+  %h1 Keyword: "#{truncate(keyword, length: 15)}"
+  %h2#caption
+
 :javascript
   $(function() {
     var slider = $("#photos").bxSlider({
@@ -24,7 +30,7 @@
           window.setTimeout(function() {
             slider.destroyShow();
             $("#caption").html("");
-            $(".photos").html(response)
+            $(".ontainer").html(response)
           }, 2000);
         })
       }
