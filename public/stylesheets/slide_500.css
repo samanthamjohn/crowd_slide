@@ -19,6 +19,7 @@ body .container {
 #content {
   display: block;
   padding: 1em 1em 5em;
+  overflow: hidden;
 }
 
 #footer {
@@ -35,7 +36,22 @@ h1 {
 h2 {
   float: right;
   color: #ccc;
-  font-size: 40px;
+  font-size: 30px;
+  text-align: right;
+  /* line-height: 35px; */
+}
+
+a { 
+  color: grey;
+  font-weight: bold
+}
+
+h2 em {
+  float: right;
+}
+
+h2 em a {
+  font-style: italic;
 }
 
 h3 {
@@ -49,6 +65,7 @@ h3 {
 h3 strong {
   font-weight: bold;
 }
+
 .photo {
   width: 960px;
   text-align: center;

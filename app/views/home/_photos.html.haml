@@ -8,8 +8,7 @@
   #photos
     - photos.each do |photo|
       .photo
-        = image_tag(photo[:image_url], title: raw("<em>#{truncate(photo[:name], :length => 25)}</em><br />#{photo[:photographer]}" ))
-
+        = image_tag(photo[:image_url], title: photo_title(photo))
 #footer
   %h1 Keyword: "#{truncate(keyword, length: 15)}"
   %h2#caption
@@ -30,7 +29,7 @@
           window.setTimeout(function() {
             slider.destroyShow();
             $("#caption").html("");
-            $(".ontainer").html(response)
+            $(".container").html(response)
           }, 2000);
         })
       }

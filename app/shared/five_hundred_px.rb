@@ -10,7 +10,9 @@ class FiveHundredPx
       photos[0...10].map do |photo|
         { image_url: photo["image_url"].gsub("2.jpg", "4.jpg"),
           name: photo["name"],
-          photographer: photo["user"]["fullname"]
+          photographer: photo["user"]["fullname"],
+          username: photo["user"]["username"],
+          photo_id: photo["id"]
         }
       end
     end
