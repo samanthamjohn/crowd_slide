@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def latest
-    sms = Sms.undisplayed.first || Sms.first(:order => "random()")
+    sms = Sms.undisplayed.last || Sms.first(:order => "random()")
     photos = sms.photos
     sms.update_attribute(:displayed, true)
     render :partial => "photos", :locals => { :photos => photos }
