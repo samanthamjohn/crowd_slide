@@ -1,2 +1,5 @@
-%h2= @pic[:name]
-= image_tag(@pic[:image_url], :class => 'pix')
+%h2#caption
+#photos
+  - @photos.each do |photo|
+    .photo
+      = image_tag(photo[:image_url], title: photo[:name])

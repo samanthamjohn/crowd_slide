@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @pic = Sms.last.photos.first
+    @photos = Sms.last.photos
   end
 end

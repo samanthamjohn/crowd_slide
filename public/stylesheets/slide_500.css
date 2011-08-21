@@ -4,9 +4,12 @@ html {
 body {
   background-color: #222;
 }
-.container {
+
+body .container {
   position: relative;
   overflow: hidden;
+  padding: 10px;
+  margin-top: 20px;
 }
 h1 {
   color: #ccc;
@@ -23,9 +26,13 @@ h3 {
   color: #ccc;
 }
 
-img.pix {
-  display: block;
-  position: relative;
+.photo {
+  width: 960px;
+  text-align: center;
+}
+
+.photo img {
   margin: auto;
-  height: 600px;
+  position: relative;
+  height: 580px;
 }
