@@ -14,17 +14,14 @@
       captionsSelector: $("#caption"),
       auto: true,
       onLastSlide: function() {
-        slider.destroyShow();
         $.get("/latest", function(response) {
+          slider.stopShow();
           window.setTimeout(function() {
+            slider.destroyShow();
+            $("#caption").html("");
             $(".photos").html(response)
           }, 2000);
         })
       }
     });
-
-    slider.stopShow();
-    $(".photos").fadeIn(500);
-    slider.startShow();
-
   });
