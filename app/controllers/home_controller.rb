@@ -1,10 +1,14 @@
 class HomeController < ApplicationController
   def index
-    @photos = Sms.last.photos
+    sms = Sms.last
+    @photos = sms.photos
+    sms.update_attribute(:displayed, true)
   end
 
   def latest
-    @photos = Sms.last.photos
-    render :partial => "photos", :locals => { :photos => @photos }
+    sms = Sms.undisplayed.first || Sms.first(:order => "random()")
+    photos = sms.photos
+    sms.update_attribute(:displayed, true)
+    render :partial => "photos", :locals => { :photos => photos }
   end
 end
